@@ -5,20 +5,20 @@ class Livro{
     private string $autor;
     private int $paginas = 0;
 
-    function getTitulo(){
+    function getTitulo():string{
         return $this->titulo;
     }
     function setTitulo(string $titulo ){
         $this->titulo = $titulo;
     }
     //autor
-    function getAutor(){
+    function getAutor():string{
         return $this->autor;
     }
     function setAutor(string $autor ){
         $this->autor = $autor;
     }
-    function getPaginas(){
+    function getPaginas():int{
         return $this->paginas;
     }
     function setPaginas(int $paginas ){
