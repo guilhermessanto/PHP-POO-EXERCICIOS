@@ -1,22 +1,22 @@
 <?php
-require_once "src/livro.php";
+require_once "src/Programacao.php";
+require_once "src/Didatico.php";
+
+$livroProgramacao = new Programacao;
+$livroProgramacao -> setTitulo('Fundamentos de HTML e CSS3');
+$livroProgramacao -> setAutor('Mauricio Samy Silva');
+$livroProgramacao -> setPaginas(120);
+$livroProgramacao -> setFormato(['Digital']);
+$livroProgramacao -> setArea('Web');
 
 
-$livroA = new Livro;
-$livroB = new Livro;
-$livroC = new Livro;
-
-$livroA ->setTitulo("As Cronicas de gelo e fogo");
-$livroA ->setAutor("Georde R.R Martin");
-$livroA ->setPaginas(4228);
-
-$livroB ->setTitulo("Harry Potter e a pedra filosofal");
-$livroB ->setAutor(" J. K. Rowling");
-$livroB ->setPaginas(264);
-
-$livroC ->setTitulo("O Senhor dos Anéis");
-$livroC ->setAutor("J. R. R. Tolkien");
-$livroC ->setPaginas(1200);
+$livroDidatico = new Didatico;
+$livroDidatico -> setTitulo('Algoritmos: Lógica Para Desenvolvimento de Programação de Computadores');
+$livroDidatico -> setAutor('José Augusto N. G. Manzano');
+$livroDidatico -> setPaginas(220);
+$livroDidatico -> setFormato(['Digital ','fisico']);
+$livroDidatico -> setDisciplina("Algoritmos");
+$livroDidatico -> setNivel(['basico ','medio']);
 
 ?> 
 <!DOCTYPE html>
@@ -56,27 +56,45 @@ tr:nth-child(even) {
             <th>Titulo</th>
             <th>Autor</th>
             <th>Páginas</th>
+            <th>formato</th>
+            <th>Area</th>
+
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td><?=$livroA->getTitulo()?></td>
-            <td><?=$livroA->getAutor()?></td>
-            <td><?=$livroA->getPaginas()?></td>
-        </tr>
-        <tr>
-            <td><?=$livroB->getTitulo()?></td>
-            <td><?=$livroB->getAutor()?></td>
-            <td><?=$livroB->getPaginas()?></td>
-        </tr>
-        <tr>
-            <td><?=$livroC->getTitulo()?></td>
-            <td><?=$livroC->getAutor()?></td>
-            <td><?=$livroC->getPaginas()?></td>
+            <td><?=$livroProgramacao->getTitulo()?></td>
+            <td><?=$livroProgramacao->getAutor()?></td>
+            <td><?=$livroProgramacao->getPaginas()?></td>
+            <td><?=$livroProgramacao->getFormato()?></td>
+            <td><?=$livroProgramacao->getArea()?></td>
         </tr>
     </tbody>
 
+</table>
+    <h2>Livro ditatico</h2>
+<table>
+    <thead>     
+        <tr>
+            <th>Titulo</th>
+            <th>Autor</th>
+            <th>Páginas</th>
+            <th>formato</th>
+            <th>disciplina</th>
+            <th>nivel</th>
 
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><?=$livroDidatico->getTitulo()?></td>
+            <td><?=$livroDidatico->getAutor()?></td>
+            <td><?=$livroDidatico->getPaginas()?></td>
+            <td><?=$livroDidatico->getFormato()?></td>
+            <td><?=$livroDidatico->getDisciplina()?></td>
+            <td><?=$livroDidatico->getNivel()?></td>
+        </tr>
+    </tbody>
 
 </table>
 
