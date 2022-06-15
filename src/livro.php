@@ -1,28 +1,37 @@
 <?php
-
-abstract class Livro{
+abstract class Livro {
     private string $titulo;
     private string $autor;
     private int $paginas = 0;
 
-    function getTitulo():string{
+
+    public function getTitulo(): string    
+    {
         return $this->titulo;
     }
-    function setTitulo(string $titulo ){
+    
+    public function setTitulo(string $titulo)
+    {
         $this->titulo = $titulo;
     }
-    //autor
-    function getAutor():string{
+
+    public function getAutor(): string
+    {
         return $this->autor;
     }
-    function setAutor(string $autor ){
+
+    public function setAutor(string $autor)
+    {
         $this->autor = $autor;
     }
-    function getPaginas():int{
+
+    public function getPaginas(): int
+    {
         return $this->paginas;
     }
-    function setPaginas(int $paginas ){
+
+    public function setPaginas(int $paginas)
+    {
         $this->paginas = $paginas;
     }
 }
-

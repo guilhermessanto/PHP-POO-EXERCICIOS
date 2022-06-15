@@ -1,102 +1,73 @@
-<?php
-require_once "src/Programacao.php";
-require_once "src/Didatico.php";
-
-$livroProgramacao = new Programacao;
-$livroProgramacao -> setTitulo('Fundamentos de HTML e CSS3');
-$livroProgramacao -> setAutor('Mauricio Samy Silva');
-$livroProgramacao -> setPaginas(120);
-$livroProgramacao -> setFormato(['Digital']);
-$livroProgramacao -> setArea('Web');
-
-
-$livroDidatico = new Didatico;
-$livroDidatico -> setTitulo('Algoritmos: Lógica Para Desenvolvimento de Programação de Computadores');
-$livroDidatico -> setAutor('José Augusto N. G. Manzano');
-$livroDidatico -> setPaginas(220);
-$livroDidatico -> setFormato(['Digital ','fisico']);
-$livroDidatico -> setDisciplina("Algoritmos");
-$livroDidatico -> setNivel(['basico ','medio']);
-
-?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio Livro</title>
-    
-    <style>
-h2{
-    text-align: center;
-}        
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid black;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color:#ddd ;
-}
-</style>
+    <title>Exercício 02 (correção)</title>
 </head>
 <body>
-    <h2>Livros</h2>    
-<table>
-    <thead>     
-        <tr>
-            <th>Titulo</th>
-            <th>Autor</th>
-            <th>Páginas</th>
-            <th>formato</th>
-            <th>Area</th>
+    <h1>Exercício 02</h1>
+    <hr>
+<?php
+require_once "src/Tecnico.php";
+$livroTecnico = new Tecnico;
 
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><?=$livroProgramacao->getTitulo()?></td>
-            <td><?=$livroProgramacao->getAutor()?></td>
-            <td><?=$livroProgramacao->getPaginas()?></td>
-            <td><?=$livroProgramacao->getFormato()?></td>
-            <td><?=$livroProgramacao->getArea()?></td>
-        </tr>
-    </tbody>
+$livroTecnico->setTitulo("Desenvolvimento de Sistemas");
+$livroTecnico->setAutor("Fulano de Tal");
+$livroTecnico->setPaginas(250);
+$livroTecnico->setFormato(["digital"]);
 
-</table>
-    <h2>Livro ditatico</h2>
-<table>
-    <thead>     
-        <tr>
-            <th>Titulo</th>
-            <th>Autor</th>
-            <th>Páginas</th>
-            <th>formato</th>
-            <th>disciplina</th>
-            <th>nivel</th>
+require_once "src/Programacao.php";
+$livroProgramacao = new Programacao;
+$livroProgramacao->setTitulo("APIs com Node.js");
+$livroProgramacao->setAutor("Beltrano dos Santos");
+$livroProgramacao->setPaginas(200);
+$livroProgramacao->setFormato(['físico']);
+$livroProgramacao->setArea("Back-End");
 
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><?=$livroDidatico->getTitulo()?></td>
-            <td><?=$livroDidatico->getAutor()?></td>
-            <td><?=$livroDidatico->getPaginas()?></td>
-            <td><?=$livroDidatico->getFormato()?></td>
-            <td><?=$livroDidatico->getDisciplina()?></td>
-            <td><?=$livroDidatico->getNivel()?></td>
-        </tr>
-    </tbody>
+require_once "src/Didatico.php";
+$livroDidatico = new Didatico;
+$livroDidatico->setTitulo("Matemática Aplicada");
+$livroDidatico->setAutor("Mariazinha da Silva");
+$livroDidatico->setPaginas(500);
+$livroDidatico->setFormato(["físico"]);
+$livroDidatico->setDisciplina("Matemática");
+$livroDidatico->setNivel(['médio', 'superior']);
+?>
 
-</table>
 
+<h2>Dados</h2>
+<h3>Técnico</h3>
+<p><?=$livroTecnico->getTitulo()?></p>
+<p><?=$livroTecnico->getAutor()?></p>
+<p><?=$livroTecnico->getPaginas()?></p>
+<p><?=$livroTecnico->getFormato()?></p>
+
+<h3>Programação</h3>
+<p><?=$livroProgramacao->getTitulo()?></p>
+<p><?=$livroProgramacao->getAutor()?></p>
+<p><?=$livroProgramacao->getPaginas()?></p>
+<p><?=$livroProgramacao->getFormato()?></p>
+<p><?=$livroProgramacao->getArea()?></p>
+
+<h3>Didático</h3>
+<p><?=$livroDidatico->getTitulo()?></p>
+<p><?=$livroDidatico->getAutor()?></p>
+<p><?=$livroDidatico->getPaginas()?></p>
+<p><?=$livroDidatico->getFormato()?></p>
+<p><?=$livroDidatico->getDisciplina()?></p>
+
+<?php foreach($livroDidatico->getNivel() as $nivel){ ?>
+<p> <?=$nivel?> </p>
+<?php } ?>
+
+<?php if($livroDidatico->getPaginas() > 100){ ?>
+        <p>Traga uma mochila</p>
+<?php } ?>
+
+
+
+<pre> <?=var_dump($livroTecnico, $livroProgramacao, $livroDidatico)?></pre>
 </body>
 </html>

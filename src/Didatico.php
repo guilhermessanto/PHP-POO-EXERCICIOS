@@ -1,27 +1,24 @@
+
 <?php
 require_once "Tecnico.php";
-class Didatico extends Tecnico{
+class Didatico extends Tecnico {
     private string $disciplina;
-    private array $nivel = ['básico','médio','superior'];
-
+    private array $nivel = ["básico", "médio", "superior"];
 
     public function getDisciplina(): string
     {
         return $this->disciplina;
     }
 
-
     public function setDisciplina(string $disciplina)
     {
         $this->disciplina = $disciplina;
     }
 
-
-    public function getNivel():string
+    public function getNivel(): array
     {
-        return implode( $this->nivel);
+        return $this->nivel;
     }
-
 
     public function setNivel(array $nivel)
     {
