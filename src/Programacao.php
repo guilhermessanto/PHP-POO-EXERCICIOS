@@ -12,4 +12,7 @@ class Programacao extends Tecnico {
     {
         $this->area = $area;
     }
+    public function formataTitulo(){
+        echo "<i style='color:blue;'>".$this->getTitulo()."</i>";
+    }
 }

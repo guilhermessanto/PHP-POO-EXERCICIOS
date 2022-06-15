@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercício 02 (correção)</title>
+    <title>Exercício 03</title>
 </head>
 <body>
-    <h1>Exercício 02</h1>
+    <h1>Exercício 03</h1>
     <hr>
 <?php
 require_once "src/Tecnico.php";
@@ -39,20 +39,20 @@ $livroDidatico->setNivel(['médio', 'superior']);
 
 <h2>Dados</h2>
 <h3>Técnico</h3>
-<p><?=$livroTecnico->getTitulo()?></p>
+<p><?=$livroTecnico->formataTitulo()?></p>
 <p><?=$livroTecnico->getAutor()?></p>
 <p><?=$livroTecnico->getPaginas()?></p>
 <p><?=$livroTecnico->getFormato()?></p>
 
 <h3>Programação</h3>
-<p><?=$livroProgramacao->getTitulo()?></p>
+<p><?=$livroProgramacao->formataTitulo()?></p>
 <p><?=$livroProgramacao->getAutor()?></p>
 <p><?=$livroProgramacao->getPaginas()?></p>
 <p><?=$livroProgramacao->getFormato()?></p>
 <p><?=$livroProgramacao->getArea()?></p>
 
 <h3>Didático</h3>
-<p><?=$livroDidatico->getTitulo()?></p>
+<p><?=$livroDidatico->formataTitulo()?></p>
 <p><?=$livroDidatico->getAutor()?></p>
 <p><?=$livroDidatico->getPaginas()?></p>
 <p><?=$livroDidatico->getFormato()?></p>

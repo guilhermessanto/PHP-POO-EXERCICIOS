@@ -12,4 +12,6 @@ class Tecnico extends Livro {
     {
         $this->formato = $formato;
     }
+
+    
 }
