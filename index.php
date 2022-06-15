@@ -68,6 +68,6 @@ $livroDidatico->setNivel(['médio', 'superior']);
 
 
 
-<pre> <?=var_dump($livroTecnico, $livroProgramacao, $livroDidatico)?></pre>
+<!-- <pre> <?=var_dump($livroTecnico, $livroProgramacao, $livroDidatico)?></pre> -->
 </body>
 </html>
