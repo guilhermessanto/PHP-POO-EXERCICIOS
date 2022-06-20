@@ -1,39 +1,51 @@
+<?php 
+require_once "vendor/autoload.php";
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercício 03</title>
+    <title>Desafio 04</title>
 </head>
 <body>
-    <h1>Exercício 03</h1>
+    <h1>Desafio 04</h1>
     <hr>
 <?php
-require_once "src/Tecnico.php";
-$livroTecnico = new Tecnico;
+
+$livroTecnico = new src\Tecnico;
 
 $livroTecnico->setTitulo("Desenvolvimento de Sistemas");
 $livroTecnico->setAutor("Fulano de Tal");
 $livroTecnico->setPaginas(250);
 $livroTecnico->setFormato(["digital"]);
 
-require_once "src/Programacao.php";
-$livroProgramacao = new Programacao;
+
+$livroProgramacao = new src\Programacao;
 $livroProgramacao->setTitulo("APIs com Node.js");
 $livroProgramacao->setAutor("Beltrano dos Santos");
 $livroProgramacao->setPaginas(200);
 $livroProgramacao->setFormato(['físico']);
 $livroProgramacao->setArea("Back-End");
 
-require_once "src/Didatico.php";
-$livroDidatico = new Didatico;
+
+$livroDidatico = new src\Didatico;
 $livroDidatico->setTitulo("Matemática Aplicada");
 $livroDidatico->setAutor("Mariazinha da Silva");
 $livroDidatico->setPaginas(500);
 $livroDidatico->setFormato(["físico"]);
 $livroDidatico->setDisciplina("Matemática");
 $livroDidatico->setNivel(['médio', 'superior']);
+
+$livroWeb = new src\Web;
+$livroWeb ->setTitulo("Livro Web");
+$livroWeb ->setAutor("tiago");
+$livroWeb ->setPaginas(320);
+$livroWeb ->setFormato(["Físico"]);
+$livroWeb ->setArea("Back-end");
+
 ?>
 
 
@@ -66,6 +78,15 @@ $livroDidatico->setNivel(['médio', 'superior']);
 <?php if($livroDidatico->getPaginas() > 100){ ?>
         <p>Traga uma mochila</p>
 <?php } ?>
+
+<h3>Web</h3>
+<p><?=$livroWeb->formataTitulo($livroWeb->getTitulo())?></p>
+<p><?=$livroWeb->getAutor()?></p>
+<p><?=$livroWeb->getPaginas()?></p>
+<p><?=$livroWeb->getFormato()?></p>
+<p><?=$livroWeb->getArea()?></p>
+
+<pre><?=var_dump($livroWeb)?></pre>
 
 
 
