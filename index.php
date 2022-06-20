@@ -14,8 +14,9 @@ require_once "vendor/autoload.php";
     <h1>Desafio 04</h1>
     <hr>
 <?php
+use src\{Tecnico, Programacao, Didatico, Web};
 
-$livroTecnico = new src\Tecnico;
+$livroTecnico = new Tecnico;
 
 $livroTecnico->setTitulo("Desenvolvimento de Sistemas");
 $livroTecnico->setAutor("Fulano de Tal");
@@ -23,7 +24,7 @@ $livroTecnico->setPaginas(250);
 $livroTecnico->setFormato(["digital"]);
 
 
-$livroProgramacao = new src\Programacao;
+$livroProgramacao = new Programacao;
 $livroProgramacao->setTitulo("APIs com Node.js");
 $livroProgramacao->setAutor("Beltrano dos Santos");
 $livroProgramacao->setPaginas(200);
@@ -31,7 +32,7 @@ $livroProgramacao->setFormato(['físico']);
 $livroProgramacao->setArea("Back-End");
 
 
-$livroDidatico = new src\Didatico;
+$livroDidatico = new Didatico;
 $livroDidatico->setTitulo("Matemática Aplicada");
 $livroDidatico->setAutor("Mariazinha da Silva");
 $livroDidatico->setPaginas(500);
@@ -39,7 +40,7 @@ $livroDidatico->setFormato(["físico"]);
 $livroDidatico->setDisciplina("Matemática");
 $livroDidatico->setNivel(['médio', 'superior']);
 
-$livroWeb = new src\Web;
+$livroWeb = new Web;
 $livroWeb ->setTitulo("Livro Web");
 $livroWeb ->setAutor("tiago");
 $livroWeb ->setPaginas(320);
